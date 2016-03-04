@@ -1,0 +1,13 @@
+parse:
+  build: .
+  environment:
+    DATABASE_URI: mongodb://mongo:27017/dev
+  links:
+    - mongodb:mongo
+  ports:
+    - "1337:1337"
+
+mongodb:
+  image: mongo:latest
+  volumes:
+    - mongodbdata:/data/db
